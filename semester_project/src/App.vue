@@ -59,7 +59,7 @@ export default {
   </v-app>
 </template>
 
-<script lang="ts" setup>
+<script>
 import HelloWorld from "@/components/HelloWorld.vue";
 import PageOne from "@/components/PageOne.vue";
 </script>
