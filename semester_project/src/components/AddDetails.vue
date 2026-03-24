@@ -1,6 +1,17 @@
 <script>
+import Stepper from "@/components/Stepper.vue";
+
 
 export default {
+  components: {
+    Stepper,
+  },
+   props: {
+    currentStep: {
+      type: Number,
+      default: 1,
+    },
+  },
   data() {
     return {
       hasExtra: null,
@@ -114,7 +125,22 @@ export default {
 
 <template>
   <v-container>
-    <h1 class="mt-15 mb-2">Tilbehør og detaljer</h1>
+     <v-toolbar flat color="white" class="top-toolbar">
+        <!-- <v-btn icon variant="text" @click="$emit('goBack')">
+          <v-icon>mdi-chevron-left</v-icon>
+        </v-btn> -->
+
+        <v-toolbar-title class="text-center font-weight-bold">
+          Opret ny genstand
+        </v-toolbar-title>
+
+        <div style="width: 40px"></div>
+      </v-toolbar>
+
+      <v-divider />
+    <Stepper :currentStep="currentStep" />
+
+    <h1 class="mt-2 mb-2">Tilbehør og detaljer</h1>
     <p>
       Angiv stand, låneperiode og eventuelt tilbehør, der følger med genstanden.
     </p>
@@ -285,18 +311,28 @@ export default {
 
    <!--  Tilbage og næste knapper -->
       
-    <v-row>
-      <v-col cols="12">
-        <div class="fixed-bottom-buttons">
-          <v-btn class="ma-2 back_button" size="large" @click="back">
-            Tilbage
-          </v-btn>
-          <v-btn class="ma-2 next_button" size="large" @click="next">
-            Næste
-          </v-btn>
-        </div>
-      </v-col>
-    </v-row>
+    <div class="bottom-bar">
+        <v-btn
+          variant="tonal"
+          rounded="lg"
+          color="grey-darken-2"
+          class="back-button"
+          @click="back"
+        >
+          <v-icon start size="18">mdi-chevron-left</v-icon>
+          Tilbage
+        </v-btn>
+
+        <v-btn
+          color="#389475"
+          rounded="lg"
+          class="create-button"
+          @click="next"
+        >
+          Næste
+        </v-btn>
+      </div>
+
   </v-container>
 </template>
 
@@ -385,37 +421,32 @@ export default {
   box-shadow: none;
 }
 
-.fixed-bottom-buttons {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 2px;
-}
-
-.back_button,
-.next_button {
-  flex: 1;
-  max-width: 200px;
-  min-height: 56px;
-  border-radius: 10px;
-  font-weight: normal;
-}
-
-.back_button {
-  background-color: whitesmoke;
-  color: black;
-}
-
-.next_button {
-  background-color: #389475;
-  color: white;
-}
 
 .selected {
   background-color: #389475 !important;
   color: white !important;
+  
 }
+
+.bottom-bar {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.back-button {
+  flex: 1;
+  text-transform: none;
+}
+
+.create-button {
+  flex: 3;
+  text-transform: none;
+}
+
+
 </style>

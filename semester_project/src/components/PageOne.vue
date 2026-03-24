@@ -1,6 +1,17 @@
 <script>
+import Stepper from "@/components/Stepper.vue";
+
 export default {
   name: "PageOne",
+  components: {
+    Stepper,
+  },
+  props: {
+    currentStep: {
+      type: Number,
+      default: 1,
+    },
+  },
   data() {
     return {
       selectedCategory: null,
@@ -59,6 +70,22 @@ export default {
 
 <template>
   <v-container class="pa-4" max-width="600">
+    <v-toolbar flat color="white" class="top-toolbar">
+      <!-- <v-btn icon variant="text" @click="$emit('goBack')">
+          <v-icon>mdi-chevron-left</v-icon>
+        </v-btn> -->
+
+      <v-toolbar-title class="text-center font-weight-bold">
+        Opret ny genstand
+      </v-toolbar-title>
+
+      <div style="width: 40px"></div>
+    </v-toolbar>
+
+    <v-divider />
+    <!-- Stepper -->
+    <Stepper :currentStep="currentStep" />
+
     <h2>Beskriv din genstand</h2>
     <p>
       Tilføj billeder, vælg kategori og giv din genstand et navn, så andre kan
@@ -162,20 +189,22 @@ export default {
 
     <!--  Tilbage og næste knapper -->
 
-    <v-row>
-      <v-col cols="12">
-        <div class="fixed-bottom-buttons">
-          <v-btn class="ma-2 back_button" size="large" @click="cancel">
-            Anuller
-          </v-btn>
-          <!-- To do - implementere navigation tilbage til MyItems -->
-          <v-btn class="ma-2 next_button" size="large" @click="next">
-            Næste
-          </v-btn>
-          <!-- To do - implementere navigation videre til bekræftelsesskærm -->
-        </div>
-      </v-col>
-    </v-row>
+    <div class="bottom-bar">
+      <v-btn
+        variant="tonal"
+        rounded="lg"
+        color="grey-darken-2"
+        class="back-button"
+        @click="cancel"
+      >
+        <v-icon start size="18">mdi-chevron-left</v-icon>
+        Tilbage
+      </v-btn>
+
+      <v-btn color="#389475" rounded="lg" class="create-button" @click="next">
+        Næste
+      </v-btn>
+    </div>
   </v-container>
 </template>
 
@@ -223,22 +252,23 @@ export default {
   gap: 2px;
 }
 
-.back_button,
-.next_button {
+.bottom-bar {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.back-button {
   flex: 1;
-  max-width: 200px;
-  min-height: 56px;
-  border-radius: 10px;
-  font-weight: normal;
+  text-transform: none;
 }
 
-.back_button {
-  background-color: whitesmoke;
-  color: black;
-}
-
-.next_button {
-  background-color: #389475;
-  color: white;
+.create-button {
+  flex: 3;
+  text-transform: none;
 }
 </style>

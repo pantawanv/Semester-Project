@@ -1,7 +1,18 @@
 <script>
+import Stepper from "@/components/Stepper.vue";
+
 export default {
   name: "ConfirmItemScreen",
-  emits: ["goBack", "createItem"],
+  emits: ["goBack", "createItem", "goToGenstandPage"],
+  components: {
+    Stepper,
+  },
+  props: {
+    currentStep: {
+      type: Number,
+      default: 1,
+    },
+  },
   data() {
     return {
       item: {
@@ -36,9 +47,9 @@ export default {
     <v-card flat class="preview-card">
       <!-- Top bar -->
       <v-toolbar flat color="white" class="top-toolbar">
-        <v-btn icon variant="text" @click="$emit('goBack')">
+        <!--  <v-btn icon variant="text" @click="$emit('goBack')">
           <v-icon>mdi-chevron-left</v-icon>
-        </v-btn>
+        </v-btn> -->
 
         <v-toolbar-title class="text-center font-weight-bold">
           Opret ny genstand
@@ -49,31 +60,8 @@ export default {
 
       <v-divider />
 
-      <!-- Stepper / progress -->
-      <div class="stepper-wrapper">
-        <div class="step-item done">
-          <div class="step-circle">
-            <v-icon size="16">mdi-check</v-icon>
-          </div>
-          <span>Grundinfo</span>
-        </div>
-
-        <div class="step-line done"></div>
-
-        <div class="step-item done">
-          <div class="step-circle">
-            <v-icon size="16">mdi-check</v-icon>
-          </div>
-          <span>Detaljer</span>
-        </div>
-
-        <div class="step-line done"></div>
-
-        <div class="step-item active">
-          <div class="step-circle">3</div>
-          <span>Forhåndsvis</span>
-        </div>
-      </div>
+      <!-- Stepper -->
+      <Stepper :currentStep="currentStep" />
 
       <!-- Content -->
       <v-card-text class="px-5 pt-2 pb-8 text">
@@ -148,7 +136,7 @@ export default {
           color="#389475"
           rounded="lg"
           class="create-button"
-          @click="$emit('createItem')"
+          @click="$emit('goToGenstandPage')"
         >
           Opret genstand
         </v-btn>
