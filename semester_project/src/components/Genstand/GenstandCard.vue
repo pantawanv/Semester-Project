@@ -93,11 +93,11 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px;
-    background: #ffffff;
-    border: 1px solid #d5d2ce;
-    border-radius: 12px;
-    padding: 12px;
+    gap: var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
     width: 100%;
     cursor: pointer;
 }
@@ -106,7 +106,7 @@ export default {
 .card-image {
     width: 64px;
     height: 64px;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     object-fit: cover;
     flex-shrink: 0;
 }
@@ -126,28 +126,28 @@ export default {
 
 /* Genstandens titel */
 .card-title {
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
     font-weight: 600;
-    color: #2d2b2a;
+    color: var(--color-neutral);
     margin: 0;
 }
 
 /* Kategori og mærke tekst under titlen */
 .card-meta {
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
-    color: #6b6763;
+    font-family: var(--font-body);
+    font-size: var(--text-label);
+    color: var(--color-secondary);
     margin: 0;
 }
 
 /* Statustag - pilleform */
 .card-status {
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-body);
     font-size: 13px;
     font-weight: 600;
     padding: 5px 11px;
-    border-radius: 9999px;
+    border-radius: var(--radius-full);
     min-height: 32px;
     display: flex;
     align-items: center;

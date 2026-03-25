@@ -164,7 +164,7 @@ export default {
         flat
       >
         <div class="icon-wrapper mb-4">
-          <v-icon size="32" color="#389475">mdi-camera</v-icon>
+          <v-icon size="32" color="var(--color-primary)">mdi-camera</v-icon>
         </div>
 
         <div class="text-h6 font-weight-bold mb-2">
@@ -229,7 +229,7 @@ export default {
         v-model="customCategory"
         label="Skriv din kategori"
         class="mt-4"
-        color="#389475"
+        color="var(--color-primary)"
         variant="outlined"
         rounded="xl"
         clearable
@@ -247,7 +247,7 @@ export default {
         v-model="itemName"
         label="Hvad er det for en genstand?"
         class="mt-4"
-        color="#389475"
+        color="var(--color-primary)"
         variant="outlined"
         rounded="xl"
       />
@@ -256,7 +256,7 @@ export default {
       <v-text-field
         label="F.eks. Bosch, Apple..."
         class="mt-4"
-        color="#389475"
+        color="var(--color-primary)"
         variant="outlined"
         rounded="xl"
       />
@@ -276,7 +276,7 @@ export default {
         Tilbage
       </v-btn>
 
-      <v-btn color="#389475" rounded="lg" class="create-button" @click="next">
+      <v-btn color="primary" rounded="lg" class="create-button" @click="next">
         Næste
       </v-btn>
     </div>
@@ -285,9 +285,20 @@ export default {
 
 <style scoped>
 .category-toggle .v-btn--active {
-  background-color: #389475 !important;
+  background-color: var(--color-primary) !important;
   color: white !important;
 }
+
+.category-toggle .v-btn {
+  height: 36px !important;
+  min-width: unset !important;
+  padding: 0 12px !important;
+}
+.category-toggle {
+  flex-wrap: wrap !important;
+  height: auto !important;
+}
+
 .uploaded-images {
   display: flex;
   flex-wrap: wrap;
@@ -298,21 +309,21 @@ export default {
 
 .upload-card {
   height: 240px;
-  border: 2px dashed #7bbf9f;
-  border-radius: 24px;
-  background-color: #f3f7f5;
+  border: 2px dashed var(--color-primary);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-image-bg);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .upload-card:hover {
-  background-color: #eef6f2;
-  border-color: #389475;
+  background-color: #E8F0E3;
+  border-color: var(--color-primary-dark);
 }
 
 /* Icon background */
 .icon-wrapper {
-  background-color: #dfeee7;
+  background-color: #E8F0E3;
   border-radius: 20px;
   padding: 16px;
 }
@@ -328,11 +339,9 @@ export default {
 }
 
 .bottom-bar {
-  position: sticky;
-  bottom: 0;
   background: white;
   border-top: 1px solid #e5e7eb;
-  padding: 12px 16px;
+  padding: 16px;
   display: flex;
   gap: 12px;
 }
@@ -340,11 +349,13 @@ export default {
 .back-button {
   flex: 1;
   text-transform: none;
+  height: 48px !important;
 }
 
 .create-button {
   flex: 3;
   text-transform: none;
+  height: 48px !important;
 }
 
 .error-text {

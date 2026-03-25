@@ -18,10 +18,10 @@
 
 <style scoped>
 .new_item_button {
-  background-color: #389475;
+  background-color: var(--color-primary);
   color: white;
   font-weight: normal;
   min-width: 200px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
 }
 </style>

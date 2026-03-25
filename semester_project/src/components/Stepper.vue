@@ -53,7 +53,6 @@ export default {
   display: flex;
   align-items: center;
   gap: 6px;
-  white-space: nowrap;
   font-size: 12px;
   color: #6b7280;
 }
@@ -71,12 +70,12 @@ export default {
 
 .step-item.done .step-circle,
 .step-item.active .step-circle {
-  background: #389475;
+  background: var(--color-primary);
   color: white;
 }
 
 .step-item.active span {
-  color: #111827;
+  color: var(--color-neutral);
   font-weight: 600;
 }
 
@@ -84,10 +83,10 @@ export default {
   flex: 1;
   height: 2px;
   min-width: 16px;
-  background: #cfd8d3;
+  background: var(--color-border);
 }
 
 .step-line.done {
-  background: #389475;
+  background: var(--color-primary);
 }
 </style>

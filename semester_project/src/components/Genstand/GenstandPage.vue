@@ -147,6 +147,17 @@ export default {
 
         </div>
 
+        <div class="opret-knap-wrapper">
+            <v-btn
+                color="primary"
+                rounded="lg"
+                class="opret-knap"
+                @click="$emit('go-to-page-one')"
+            >
+                Opret ny genstand
+            </v-btn>
+        </div>
+
     </main>
 </template>
 
@@ -154,18 +165,18 @@ export default {
 
 /* Sidebaggrund - varm off-white som fylder hele skærmen */
 .page {
-    background: #f5f3ef;
+    background: var(--color-bg);
     min-height: 100vh;
-    padding: 24px 16px;
+    padding: var(--space-6) var(--space-4);
 }
 
 /* Sidetitel */
 .page-title {
-    font-family: 'Newsreader', serif;
-    font-size: 28px;
+    font-family: var(--font-display);
+    font-size: var(--text-h1);
     font-weight: 600;
-    color: #2d2b2a;
-    margin-bottom: 16px;
+    color: var(--color-neutral);
+    margin-bottom: var(--space-4);
     text-align: center;
 }
 
@@ -173,16 +184,37 @@ export default {
 .card-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--space-3);
 }
 
 /* Besked når ingen genstande matcher filteret */
 .ingen-resultater {
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
-    color: #6b6763;
+    font-family: var(--font-body);
+    font-size: var(--text-label);
+    color: var(--color-secondary);
     text-align: center;
-    margin-top: 32px;
+    margin-top: var(--space-8);
+}
+.opret-knap-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: white;
+  border-top: 1px solid var(--color-border);
 }
 
+.opret-knap {
+  width: 100%;
+  height: 48px !important;
+  text-transform: none;
+}
+
+.page {
+  background: var(--color-bg);
+  min-height: 100vh;
+  padding: var(--space-6) var(--space-4);
+  padding-bottom: 90px;
+}
 </style>

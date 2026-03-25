@@ -92,7 +92,7 @@ export default {
         @goToGenstandPage="goToGenstandPage"
       />
 
-      <GenstandPage v-if="currentPage === 'genstandPage'" />
+      <GenstandPage v-if="currentPage === 'genstandPage'" @go-to-page-one="goToPageOne" />
     </v-main>
 
     <v-btn
@@ -100,7 +100,7 @@ export default {
       icon="mdi-home"
       location="top left"
       position="absolute"
-      color="#389475"
+      color="primary"
       @click="goHome"
     />
 
@@ -109,7 +109,7 @@ export default {
       icon="mdi-theme-light-dark"
       location="top right"
       position="absolute"
-      @click="$vuetify.theme.cycle()" -->
-    />
+      @click="$vuetify.theme.cycle()" 
+    />-->
   </v-app>
 </template>

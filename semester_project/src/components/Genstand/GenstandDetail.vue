@@ -193,9 +193,9 @@ export default {
 
 /* Hele detaljesiden - varm baggrund som fylder hele skærmen */
 .detalje-side {
-    background: #f5f3ef;
+    background: var(--color-bg);
     min-height: 100vh;
-    padding: 16px;
+    padding: var(--space-4);
     box-sizing: border-box;
 }
 
@@ -204,33 +204,33 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: var(--space-4);
 }
 
 /* Tilbage-knap - gennemsigtig baggrund */
 .tilbage-knap {
     background: transparent;
-    color: #2d2b2a;
+    color: var(--color-neutral);
     border: none;
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
     font-weight: 500;
     cursor: pointer;
-    padding: 12px 0;
+    padding: var(--space-3) 0;
     min-height: 44px;
 }
 
 /* Rediger-knap - grøn baggrund med hvid tekst */
 .rediger-knap {
-    background: #546a41;
+    background: var(--color-primary);
     color: #ffffff;
     border: none;
-    border-radius: 8px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
     font-weight: 500;
     cursor: pointer;
-    padding: 12px 20px;
+    padding: var(--space-3) var(--space-4);
     min-height: 44px;
 }
 
@@ -238,9 +238,9 @@ export default {
 .detalje-billede-wrapper {
     position: relative;
     margin: 0 0 20px 0;
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    background: #eae8e4;
+    background: var(--color-image-bg);
 }
 
 /* Billedet fylder hele bredden */
@@ -259,11 +259,11 @@ export default {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-body);
     font-size: 13px;
     font-weight: 600;
     padding: 5px 11px;
-    border-radius: 9999px;
+    border-radius: var(--radius-full);
     min-height: 32px;
 }
 
@@ -277,63 +277,63 @@ export default {
 
 /* Tilgængelig - grøn */
 .status-tilgaengelig {
-    background: #e8f0e3;
-    color: #2d4a1e;
+    background: var(--color-tilgaengelig-bg);
+    color: var(--color-tilgaengelig-text);
 }
 .status-tilgaengelig .detalje-status-prik {
-    background: #3d6b27;
+    background: var(--color-tilgaengelig-dot);
 }
 
 /* Udlånt - orange */
 .status-udlaant {
-    background: #f7e8d8;
-    color: #7a3810;
+    background: var(--color-udlaant-bg);
+    color: var(--color-udlaant-text);
 }
 .status-udlaant .detalje-status-prik {
-    background: #a84f1a;
+    background: var(--color-udlaant-dot);
 }
 
 /* Inaktiv - grå */
 .status-inaktiv {
-    background: #eceae8;
-    color: #3a3836;
+    background: var(--color-inaktiv-bg);
+    color: var(--color-inaktiv-text);
 }
 .status-inaktiv .detalje-status-prik {
-    background: #5a5855;
+    background: var(--color-inaktiv-dot);
 }
 
 /* Genstandens titel */
 .detalje-titel {
-    font-family: 'Newsreader', serif;
-    font-size: 28px;
+    font-family: var(--font-display);
+    font-size: var(--text-h1);
     font-weight: 600;
-    color: #2d2b2a;
+    color: var(--color-neutral);
     margin: 0 0 6px 0;
 }
 
 /* Kategori, mærke og stand tekst */
 .detalje-meta {
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
-    color: #6b6763;
+    font-family: var(--font-body);
+    font-size: var(--text-label);
+    color: var(--color-secondary);
     margin: 0 0 20px 0;
 }
 
 /* To bokse side om side */
 .detalje-bokse {
     display: flex;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
     align-items: stretch;
 }
 
 /* Basis boks styling - centreret indhold */
 .detalje-boks {
     flex: 1;
-    background: #ffffff;
-    border: 1px solid #d5d2ce;
-    border-radius: 12px;
-    padding: 16px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -366,10 +366,10 @@ export default {
 
 /* Overskrift ved siden af ikonet */
 .detalje-boks-overskrift {
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-body);
     font-size: 13px;
     font-weight: 600;
-    color: #6b6763;
+    color: var(--color-secondary);
     margin: 0;
     white-space: nowrap;
     text-transform: uppercase;
@@ -378,27 +378,27 @@ export default {
 
 /* Lille grå label øverst i max lån boksen */
 .detalje-boks-label-top {
-    font-family: 'Manrope', sans-serif;
-    font-size: 12px;
+    font-family: var(--font-body);
+    font-size: var(--text-meta);
     font-weight: 500;
-    color: #6b6763;
+    color: var(--color-secondary);
 }
 
 /* Stort tal i midten af max lån boksen */
 .detalje-boks-tal {
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-body);
     font-size: 32px;
     font-weight: 700;
-    color: #2d2b2a;
+    color: var(--color-neutral);
     line-height: 1;
 }
 
 /* Lille enhed under tallet - fx "dage" */
 .detalje-boks-enhed {
-    font-family: 'Manrope', sans-serif;
-    font-size: 12px;
+    font-family: var(--font-body);
+    font-size: var(--text-meta);
     font-weight: 500;
-    color: #6b6763;
+    color: var(--color-secondary);
 }
 
 /* Chips wrapper - viser chips på samme linje */
@@ -410,26 +410,26 @@ export default {
 
 /* Hver chip - lille afrundet tag */
 .detalje-chip {
-    font-family: 'Manrope', sans-serif;
-    font-size: 12px;
+    font-family: var(--font-body);
+    font-size: var(--text-meta);
     font-weight: 500;
-    color: #2d2b2a;
-    background: #f5f3ef;
-    border: 1px solid #d5d2ce;
-    border-radius: 9999px;
+    color: var(--color-neutral);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
     padding: 4px 10px;
 }
 
 /* Ejer sektion - hvid boks med avatar */
 .detalje-ejer {
-    background: #ffffff;
-    border: 1px solid #d5d2ce;
-    border-radius: 12px;
-    padding: 16px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
     margin-top: 4px;
 }
 
@@ -437,11 +437,11 @@ export default {
 .detalje-ejer-avatar {
     width: 44px;
     height: 44px;
-    border-radius: 9999px;
-    background: #546a41;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
     color: #ffffff;
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: var(--text-label);
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -457,18 +457,18 @@ export default {
 
 /* Ejer navn */
 .detalje-ejer-navn {
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: var(--text-label);
     font-weight: 600;
-    color: #2d2b2a;
+    color: var(--color-neutral);
     margin: 0 0 2px 0;
 }
 
 /* Oprettelsesdato */
 .detalje-ejer-dato {
-    font-family: 'Manrope', sans-serif;
-    font-size: 12px;
-    color: #6b6763;
+    font-family: var(--font-body);
+    font-size: var(--text-meta);
+    color: var(--color-secondary);
     margin: 0;
     white-space: nowrap;
 }
@@ -478,11 +478,11 @@ export default {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-body);
     font-size: 13px;
     font-weight: 600;
     padding: 5px 11px;
-    border-radius: 9999px;
+    border-radius: var(--radius-full);
     min-height: 32px;
     flex-shrink: 0;
 }
@@ -490,17 +490,17 @@ export default {
 /* Statistik sektion - tre bokse side om side */
 .detalje-stats {
     display: flex;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
 }
 
 /* Hver statistik boks */
 .detalje-stat-boks {
     flex: 1;
-    background: #ffffff;
-    border: 1px solid #d5d2ce;
-    border-radius: 12px;
-    padding: 16px 12px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -510,17 +510,17 @@ export default {
 
 /* Stort tal i statistik boksen */
 .detalje-stat-tal {
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font-body);
     font-size: 22px;
     font-weight: 600;
-    color: #2d2b2a;
+    color: var(--color-neutral);
 }
 
 /* Label under tallet */
 .detalje-stat-label {
-    font-family: 'Manrope', sans-serif;
-    font-size: 12px;
-    color: #6b6763;
+    font-family: var(--font-body);
+    font-size: var(--text-meta);
+    color: var(--color-secondary);
 }
 
 </style>

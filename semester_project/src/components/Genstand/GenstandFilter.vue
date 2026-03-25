@@ -51,22 +51,22 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 24px;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
     width: 100%;
     padding: 2px 0;
 }
 
 /* Basis tab - alle tabs har samme størrelse og vægt altid */
 .filter-tab {
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: var(--text-label);
     font-weight: 600;
-    color: #6b6763;
+    color: var(--color-secondary);
     background: transparent;
-    border: 1.5px solid #d5d2ce;
-    border-radius: 9999px;
-    padding: 8px 16px;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-4);
     min-height: 44px;
     cursor: pointer;
     white-space: nowrap;
@@ -76,8 +76,8 @@ export default {
 
 /* Hover - subtilt grønt */
 .filter-tab:hover {
-    border-color: #546a41;
-    color: #546a41;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
 
 /* Fjerner fokus ring ved museklik - aktiv styling giver nok feedback */
@@ -87,16 +87,16 @@ export default {
 
 /* Fokus ring kun ved keyboard navigation */
 .filter-tab:focus-visible {
-    outline: 3px solid #2d2b2a;
+    outline: 3px solid var(--color-neutral);
     outline-offset: 3px;
 }
 
 /* Aktiv tab - fyldt grøn med samme padding som inaktive tabs */
 .filter-tab-aktiv {
-    background: #546a41 !important;
+    background: var(--color-primary) !important;
     color: #ffffff !important;
-    border-color: #546a41 !important;
-    padding: 8px 16px !important;
+    border-color: var(--color-primary) !important;
+    padding: var(--space-2) var(--space-4) !important;
 }
 
 </style>

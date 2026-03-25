@@ -324,7 +324,7 @@ export default {
         </v-btn>
 
         <v-btn
-          color="#389475"
+          color="primary"
           rounded="lg"
           class="create-button"
           @click="next"
@@ -345,11 +345,12 @@ export default {
 }
 
 .extra_button {
-  background-color: whitesmoke;
-  color: black;
-  font-weight: normal;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  color: var(--color-neutral);
+  font-weight: 500;
   min-width: 100px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   box-shadow: none;
 }
 
@@ -367,20 +368,22 @@ export default {
 }
 
 .custom_input{
-  border-radius: 10px;
-  border: 1px solid #ccc;  
-  min-height: 56px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-input-border);  
+  min-height: 44px;
   display: flex;
   align-items: center;
   padding: 0 12px;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
 }
 
 .add_button {
-  background-color: #389475;
+  background-color: var(--color-primary);
   color: white;
   width: 56px;
   height: 56px;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   min-width: 0; /* IMPORTANT */
   font-size: 24px;
   padding: 0;
@@ -394,13 +397,16 @@ export default {
 }
 
 .tag {
-  background-color: lightgray;
-  color: black;
+  background-color: var(--color-bg);
+  color: var(--color-neutral);
   padding: 4px 10px;
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: var(--text-meta);
+  font-weight: 500;
 }
 
 .remove_tag {
@@ -413,25 +419,30 @@ export default {
 }
 
 .condition_button {
-  background-color: whitesmoke;
-  color: black;
-  font-weight: normal;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  color: var(--color-neutral);
+  font-weight: 500;
   min-width: 100px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   box-shadow: none;
 }
 
 
 .selected {
-  background-color: #389475 !important;
+  background-color: var(--color-primary) !important;
   color: white !important;
   
 }
 
 .bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: white;
   border-top: 1px solid #e5e7eb;
-  padding: 12px 16px;
+  padding: 16px;
   display: flex;
   gap: 12px;
 }
@@ -439,11 +450,13 @@ export default {
 .back-button {
   flex: 1;
   text-transform: none;
+  height: 48px !important;
 }
 
 .create-button {
   flex: 3;
   text-transform: none;
+  height: 48px !important;
 }
 
 

@@ -47,11 +47,11 @@ export default {
 <style scoped>
 .items_button,
 .loans_button {
-  background-color: #389475;
+  background-color: var(--color-primary);
   color: white;
   font-weight: normal;
   min-width: 200px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
 }
 
 .welcome-image {
@@ -59,7 +59,7 @@ export default {
 }
 
 .page-bg {
-  background-color: #e2e9c9;
+  background-color: var(--color-bg);
   min-height: 100vh;
 }
 </style>

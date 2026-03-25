@@ -44,7 +44,6 @@ export default {
 
 <template>
   <v-container class="pa-4">
-    <v-card flat class="preview-card">
       <!-- Top bar -->
       <v-toolbar flat color="white" class="top-toolbar">
         <!--  <v-btn icon variant="text" @click="$emit('goBack')">
@@ -133,7 +132,7 @@ export default {
         </v-btn>
 
         <v-btn
-          color="#389475"
+          color="primary"
           rounded="lg"
           class="create-button"
           @click="$emit('goToGenstandPage')"
@@ -141,7 +140,6 @@ export default {
           Opret genstand
         </v-btn>
       </div>
-    </v-card>
   </v-container>
 </template>
 
@@ -176,7 +174,6 @@ export default {
   display: flex;
   align-items: center;
   gap: 6px;
-  white-space: nowrap;
   font-size: 12px;
   color: #6b7280;
 }
@@ -266,23 +263,28 @@ export default {
 }
 
 .bottom-bar {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   background: white;
   border-top: 1px solid #e5e7eb;
-  padding: 12px 16px;
+  padding: 16px;
   display: flex;
   gap: 12px;
+
 }
 
 .back-button {
   flex: 1;
   text-transform: none;
+  height: 48px !important;
 }
 
 .create-button {
   flex: 3;
   text-transform: none;
+  height: 48px !important;
 }
 .text {
   font-family: "Roboto", sans-serif;
