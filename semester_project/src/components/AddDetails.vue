@@ -124,7 +124,7 @@ export default {
 
 
 <template>
-  <v-container>
+  <v-container class="add-details-container">
      <v-toolbar flat color="white" class="top-toolbar">
         <!-- <v-btn icon variant="text" @click="$emit('goBack')">
           <v-icon>mdi-chevron-left</v-icon>
@@ -337,6 +337,10 @@ export default {
 </template>
 
 <style scoped>
+
+.add-details-container {
+  padding-bottom: calc(96px + env(safe-area-inset-bottom));
+}
 
 .error-text {
   color: red;
